@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { YOUTUBE_API } from '../utils/constants'
 import VideoCard from './VideoCard';
+import { Link } from 'react-router-dom';
 
 
 function VideoContainer(){
@@ -17,7 +18,10 @@ function VideoContainer(){
 
 return(
   <div className='flex flex-wrap'>
-    {video.map((video)=><VideoCard video={video.id} info={video}/>)}
+    {video.map((video)=>
+    <Link to={"/watch?v=" + video.id}><VideoCard video={video.id} info={video}/>
+    </Link>
+    )}
   </div>
 )}
 

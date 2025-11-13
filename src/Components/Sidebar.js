@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Sidebar(){
     const sidebar = useSelector(store=>store.nav.sidebar);
@@ -6,7 +7,11 @@ function Sidebar(){
     return(
         <div className="p-5 w-48 shadow-lg">
             <ul>
-                <li>Home</li>
+                <li>
+                <Link to ="/">
+                Home
+                </Link>
+                </li>
                 <li>Shorts</li>
                 <li>Subscriptions</li>
                 </ul>
